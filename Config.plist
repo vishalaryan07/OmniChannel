@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Section_Api</key>
+	<string>http://192.168.140.23:8080/beaconretail/sections</string>
+	<key>Offers_Api</key>
+	<string>http://192.168.140.23:8080/beaconretail/offers</string>
+	<key>Prod_Api</key>
+	<string>http://192.168.140.23:8080/beaconretail/products</string>
+	<key>MainEntranceBeacon_Minor</key>
+	<real>20643</real>
+	<key>MainEntranceBeacon_Major</key>
+	<real>37372</real>
+	<key>WomenSectionBeacon_Minor</key>
+	<integer>41861</integer>
+	<key>WomenSectionBeacon_Major</key>
+	<integer>36164</integer>
+	<key>MenSectionBeacon_Minor</key>
+	<integer>39431</integer>
+	<key>MenSectionBeacon_Major</key>
+	<integer>32673</integer>
+	<key>EntryBeacon_Major</key>
+	<integer>5813</integer>
+	<key>EntryBeacon_Minor</key>
+	<integer>506</integer>
+	<key>KidSectionBeacon_Major</key>
+	<integer>64990</integer>
+	<key>KidSectionBeacon_Minor</key>
+	<integer>59688</integer>
+	<key>UUID</key>
+	<string>B9407F30-F5F8-466E-AFF9-25556B57FE6D</string>
+</dict>
+</plist>
