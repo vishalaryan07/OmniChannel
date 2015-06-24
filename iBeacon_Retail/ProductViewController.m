@@ -129,25 +129,38 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Config" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSLog(@"The product Api is %@",[dict objectForKey:@"Prod_Api"]);
- // send block as parameter to get callbacks
-//    [self shouldHideLoadingIndicator:NO];
-    [self.networks fetchDataFromServer:[dict objectForKey:@"Prod_Api"] withreturnMethod:^(NSMutableArray* data){
-        self.products = self.searchFilteredProducts = globals.productDataArray = data;
-        NSLog(@"The product Api is %lu",(unsigned long)[globals.productDataArray count]);
-        dispatch_async(dispatch_get_main_queue(), ^
-                       {
-                           [self.prodCollectionView reloadData];
-                           [self shouldHideLoadingIndicator:YES];
-                           if (self.refreshControl) {
-                               [self.refreshControl endRefreshing];
-                           }
-                           
-                       });
-        
-    }];
-   // [self.prodCollectionView reloadData];
+    // send block as parameter to get callbacks
+    //    [self shouldHideLoadingIndicator:NO];
     
+    //Static Data : Vishal
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Products" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:filePath];
     
+    NSError *error = nil;
+    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    self.searchFilteredProducts = jsonArray;
+    globals.productDataArray = [jsonArray mutableCopy];
+    NSLog(@"%@", jsonArray);
+    
+    if (self.refreshControl) {
+        [self.refreshControl endRefreshing];
+    }
+   
+//   [self.networks fetchDataFromServer:[dict objectForKey:@"Prod_Api"] withreturnMethod:^(NSMutableArray* data){
+//        self.searchFilteredProducts = self.products =  globals.productDataArray = data;
+//        NSLog(@"The product Api is %lu",(unsigned long)[globals.productDataArray count]);
+//        dispatch_async(dispatch_get_main_queue(), ^
+//                       {
+//                           [self.prodCollectionView reloadData];
+//                           [self shouldHideLoadingIndicator:YES];
+//                           if (self.refreshControl) {
+//                               [self.refreshControl endRefreshing];
+//                           }
+//                           
+//                       });
+//        
+//    }]; 
+    // [self.prodCollectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {

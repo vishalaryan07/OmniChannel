@@ -199,9 +199,6 @@ static GlobalVariables *instance = nil;
         [defaults setObject:archivedObject forKey:@"CartItems"];
         [defaults synchronize];
     }
-    
-    
-    
 }
 
 +(void)removeItemFromCart: (CartItem*) cartItem{
@@ -271,15 +268,25 @@ static GlobalVariables *instance = nil;
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSLog(@"The product Api is %@",[dict objectForKey:@"Offers_Api"]);
     // send block as parameter to get callbacks
-    [networks fetchDataFromServer:[dict objectForKey:@"Offers_Api"] withreturnMethod:^(NSMutableArray* data){
-        instance.offersDataArray=data;
-        NSLog(@"The offer Api is %lu",(unsigned long)[instance.offersDataArray count]);
-        
-        [networks fetchDataFromServer:[dict objectForKey:@"Section_Api"] withreturnMethod:^(NSMutableArray* data){
-            instance.sectionBeaconArray=data;
-            NSLog(@"The section Api is %lu",(unsigned long)[instance.sectionBeaconArray count]);
-        }];
-    }];
+//    [networks fetchDataFromServer:[dict objectForKey:@"Offers_Api"] withreturnMethod:^(NSMutableArray* data){
+//        instance.offersDataArray=data;
+//        NSLog(@"The offer Api is %lu",(unsigned long)[instance.offersDataArray count]);
+//        
+//        [networks fetchDataFromServer:[dict objectForKey:@"Section_Api"] withreturnMethod:^(NSMutableArray* data){
+//            instance.sectionBeaconArray=data;
+//            NSLog(@"The section Api is %lu",(unsigned long)[instance.sectionBeaconArray count]);
+//        }];
+//    }];
+    
+    
+    //Static Data : Vishal
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"Offers" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:filePath];
+    
+    NSError *error = nil;
+    NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:&error];
+    instance.offersDataArray = [jsonArray mutableCopy];
+    NSLog(@"%@", jsonArray);
 }
 
 +(Products *) getProductWithID:(NSInteger)offerId{

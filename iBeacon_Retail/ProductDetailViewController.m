@@ -35,12 +35,13 @@
     
     [self setupPageControlForProductImagesCollectionView];
     [self startUserActivities];
+    
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
     [SlideNavigationController sharedInstance].navigationBar.tintColor = [UIColor whiteColor];
-    
     
     /* Using custom button to add the WHITE back arrow to the leftbarbuttonitem */
     UIButton *button  = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 32, 32)];
