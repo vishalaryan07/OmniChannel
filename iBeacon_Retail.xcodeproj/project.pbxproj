@@ -138,6 +138,10 @@
 		B1F1A0CE1AE7C5AD00B10CDE /* no-image.png in Resources */ = {isa = PBXBuildFile; fileRef = B1F1A0CD1AE7C5AD00B10CDE /* no-image.png */; };
 		C92FE5E01B3A960D00D0D73F /* Products.json in Resources */ = {isa = PBXBuildFile; fileRef = C92FE5DF1B3A960D00D0D73F /* Products.json */; };
 		C92FE5E21B3AAD1400D0D73F /* Offers.json in Resources */ = {isa = PBXBuildFile; fileRef = C92FE5E11B3AAD1400D0D73F /* Offers.json */; };
+		C993F4F91B4A8B4000FAC2F6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C993F4F81B4A8B4000FAC2F6 /* FBSDKCoreKit.framework */; };
+		C993F4FB1B4A8B4E00FAC2F6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C993F4FA1B4A8B4E00FAC2F6 /* FBSDKLoginKit.framework */; };
+		C993F4FD1B4A8B5700FAC2F6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C993F4FC1B4A8B5700FAC2F6 /* FBSDKShareKit.framework */; };
+		C993F5011B4AA4CB00FAC2F6 /* Yamaha_VMAX.png in Resources */ = {isa = PBXBuildFile; fileRef = C993F5001B4AA4CB00FAC2F6 /* Yamaha_VMAX.png */; };
 		EF12789D1ADBD11E003CA791 /* Cart.png in Resources */ = {isa = PBXBuildFile; fileRef = EF12788D1ADBD11E003CA791 /* Cart.png */; };
 		EF12789E1ADBD11E003CA791 /* Cart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF12788E1ADBD11E003CA791 /* Cart@2x.png */; };
 		EF12789F1ADBD11E003CA791 /* Cart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF12788F1ADBD11E003CA791 /* Cart@3x.png */; };
@@ -388,6 +392,10 @@
 		B1F1A0CD1AE7C5AD00B10CDE /* no-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-image.png"; sourceTree = "<group>"; };
 		C92FE5DF1B3A960D00D0D73F /* Products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Products.json; sourceTree = "<group>"; };
 		C92FE5E11B3AAD1400D0D73F /* Offers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Offers.json; sourceTree = "<group>"; };
+		C993F4F81B4A8B4000FAC2F6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		C993F4FA1B4A8B4E00FAC2F6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C993F4FC1B4A8B5700FAC2F6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		C993F5001B4AA4CB00FAC2F6 /* Yamaha_VMAX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Yamaha_VMAX.png; path = ../../../Downloads/Yamaha_VMAX.png; sourceTree = "<group>"; };
 		EF12788D1ADBD11E003CA791 /* Cart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cart.png; sourceTree = "<group>"; };
 		EF12788E1ADBD11E003CA791 /* Cart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cart@2x.png"; sourceTree = "<group>"; };
 		EF12788F1ADBD11E003CA791 /* Cart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cart@3x.png"; sourceTree = "<group>"; };
@@ -417,6 +425,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C993F4FB1B4A8B4E00FAC2F6 /* FBSDKLoginKit.framework in Frameworks */,
 				45DA407A1AC293AB00D86C8A /* QuartzCore.framework in Frameworks */,
 				8120C7091AC186B5008019EE /* libEstimoteIndoorSDK.a in Frameworks */,
 				818747701AC185BF00C7E043 /* libEstimoteSDK.a in Frameworks */,
@@ -430,6 +439,8 @@
 				0AF78F831AA0394800B57B8C /* CoreBluetooth.framework in Frameworks */,
 				0AF78F851AA0395800B57B8C /* SystemConfiguration.framework in Frameworks */,
 				45526A511AB04BFE00E6F7C3 /* CoreGraphics.framework in Frameworks */,
+				C993F4FD1B4A8B5700FAC2F6 /* FBSDKShareKit.framework in Frameworks */,
+				C993F4F91B4A8B4000FAC2F6 /* FBSDKCoreKit.framework in Frameworks */,
 				45526A4D1AB04BBE00E6F7C3 /* UIKit.framework in Frameworks */,
 				0AF77D931AA038A700B57B8C /* Foundation.framework in Frameworks */,
 			);
@@ -466,6 +477,7 @@
 		0AF77D6B1AA0363800B57B8C /* iBeacon_Retail */ = {
 			isa = PBXGroup;
 			children = (
+				C993F5001B4AA4CB00FAC2F6 /* Yamaha_VMAX.png */,
 				0AF77D701AA0363800B57B8C /* AppDelegate.h */,
 				0AF77D711AA0363800B57B8C /* AppDelegate.m */,
 				81AE08971AA7672200CD7F75 /* MenuViewController.h */,
@@ -722,6 +734,9 @@
 		811492CC1AC1A63A009AB358 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C993F4FC1B4A8B5700FAC2F6 /* FBSDKShareKit.framework */,
+				C993F4FA1B4A8B4E00FAC2F6 /* FBSDKLoginKit.framework */,
+				C993F4F81B4A8B4000FAC2F6 /* FBSDKCoreKit.framework */,
 				45DA40791AC293AB00D86C8A /* QuartzCore.framework */,
 				45526A5F1AB06F3300E6F7C3 /* libxml2.dylib */,
 				45526A581AB04CDA00E6F7C3 /* AVFoundation.framework */,
@@ -1002,6 +1017,7 @@
 				45526A461AB048B300E6F7C3 /* screen8_beacon_green@2x.png in Resources */,
 				EF1278A91ADBD11E003CA791 /* product@2x.png in Resources */,
 				81A22FE61ADFB56900F7BA2A /* CheckoutViewController.xib in Resources */,
+				C993F5011B4AA4CB00FAC2F6 /* Yamaha_VMAX.png in Resources */,
 				45526A2D1AB048B300E6F7C3 /* 8b.mov in Resources */,
 				45526A381AB048B300E6F7C3 /* beacongrey@2x.png in Resources */,
 				EF1278AA1ADBD11E003CA791 /* product@3x.png in Resources */,
@@ -1287,6 +1303,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/vishal/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = iBeacon_Retail/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -1315,6 +1332,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/vishal/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = iBeacon_Retail/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

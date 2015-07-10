@@ -8,6 +8,9 @@
 
 #import "ProductDetailViewController.h"
 #import "UIImageView+WebCache.h"
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import <FBSDKShareKit/FBSDKShareDialog.h>
 
 @interface ProductDetailViewController()
 @property (nonatomic,strong) NSString* randomDiscount;
@@ -35,6 +38,19 @@
     
     [self setupPageControlForProductImagesCollectionView];
     [self startUserActivities];
+    
+    NSString *postId = [NSString stringWithFormat:@"/%@",@"10206118803982849"];
+    FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc]
+                                  initWithGraphPath:postId
+                                  parameters:nil
+                                  HTTPMethod:@"GET"];
+    [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
+                                          id result,
+                                          NSError *error) {
+        // Handle the result
+    }];
+    
+    NSLog(@"product name :%@",NSStringFromCGRect(_productName.frame));
     
 }
 
@@ -284,5 +300,37 @@
     }
 }
 
+- (IBAction)shareOnFBBtnClicked:(id)sender {
+    if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
+        // TODO: publish content.
+        NSLog(@"1");
+        UIImage *_image = [UIImage imageNamed:@"Yamaha_VMAX.png"];
+        NSMutableDictionary* params = [[NSMutableDictionary alloc] init];
+        [params setObject:@"Hi" forKey:@"message"];
+        [params setObject:UIImagePNGRepresentation(_image) forKey:@"picture"];
+        
+        if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
+            [[[FBSDKGraphRequest alloc]
+              initWithGraphPath:@"me/photos"
+              parameters: params
+              HTTPMethod:@"POST"]
+             startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                 if (!error) {
+                     NSLog(@"Post id:%@", result);
+                 }
+                 else {
+                     NSLog(@"error :%@",error);
+                 }
+             }];
+        }
+
+    } else {
+        FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
+        [loginManager logInWithPublishPermissions:@[@"publish_actions"] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+            //TODO: process error or result.
+            NSLog(@"2");
+        }];
+    }
+}
 
 @end
